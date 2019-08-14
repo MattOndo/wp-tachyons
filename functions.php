@@ -20,7 +20,7 @@ function blankslate_load_scripts() {
 
 add_action( 'wp_footer', 'blankslate_footer_scripts' );
 function blankslate_footer_scripts() {
-	wp_enqueue_script( 'blankslate-script', '/wp-content/themes/wp-tachyons/js/site.js');
+	wp_enqueue_script( 'blankslate-script', '/wp-content/themes/wp-tachyons/js/site.js' );
 }
 
 add_filter( 'document_title_separator', 'blankslate_document_title_separator' );
@@ -106,3 +106,17 @@ function blankslate_comment_count( $count ) {
 		return $count;
 	}
 }
+
+add_theme_support( 'custom-logo', array(
+	'height'      => 100,
+	'width'       => 100,
+	'flex-height' => true,
+	'flex-width'  => true,
+	'header-text' => array( 'site-title', 'site-description' ),
+) );
+
+function theme_prefix_setup() {
+	add_theme_support( 'custom-logo' );
+}
+
+add_action( 'after_setup_theme', 'theme_prefix_setup' );
