@@ -20,7 +20,7 @@ function blankslate_load_scripts() {
 
 add_action( 'wp_footer', 'blankslate_footer_scripts' );
 function blankslate_footer_scripts() {
-	wp_enqueue_script( 'blankslate-script', '/wp-content/themes/blankslate/js/site.js');
+	wp_enqueue_script( 'blankslate-script', '/wp-content/themes/wp-tachyons/js/site.js');
 }
 
 add_filter( 'document_title_separator', 'blankslate_document_title_separator' );
